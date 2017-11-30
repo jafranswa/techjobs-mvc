@@ -10,7 +10,18 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <!-- TODO #3 - Use the same list display from search.html -->
+    <!-- TODONE #3 - Use the same list display from search.html -->
+    <h2>Results List</h2>
+    <ul>
+        <table class="job-listing" th:each="item : ${jobs}">
+            <tr th:each="line : ${item}">
+                <td th:text="${line.key}"></td>
+                <td th:text="${line.value}"></td>
+
+            </tr>
+            <br/>
+        </table>
+    </ul>
 
 </div>
 
